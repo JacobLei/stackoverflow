@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,6 +30,8 @@ public class TagController {
         TagServiceImpl tagService = new TagServiceImpl();
         List<Tag> list = tagService.search(begin, end);
         for(Tag t : list){
+            t.setInputTime(new Date());
+            t.setUpdateTime(new Date());
             tagRepository.save(t);
         }
 

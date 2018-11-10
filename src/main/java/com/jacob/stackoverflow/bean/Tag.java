@@ -1,9 +1,12 @@
 package com.jacob.stackoverflow.bean;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Tag {
@@ -23,6 +26,14 @@ public class Tag {
     private String excerpt;
     private String askedToday;
     private String askedWeek;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date inputTime;     // 入库时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date updateTime;    // 修改时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date spiderTime;    // 抓取时间
+
 
 
     public String getQuestionName() {
@@ -65,14 +76,27 @@ public class Tag {
         this.askedWeek = askedWeek;
     }
 
-    @Override
-    public String toString(){
-        return "Tag{" +
-                "name = '" + questionName + '\'' +
-                ", multiplierCounts = '" + multiplierCounts + '\'' +
-                ", excerpt = '" + excerpt + '\'' +
-                ", askedToday = '" + askedToday + '\'' +
-                ", askedWeek = '" + askedWeek + '\'' +
-                "}";
+    public Date getInputTime() {
+        return inputTime;
+    }
+
+    public void setInputTime(Date inputTime) {
+        this.inputTime = inputTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Date getSpiderTime() {
+        return spiderTime;
+    }
+
+    public void setSpiderTime(Date spiderTime) {
+        this.spiderTime = spiderTime;
     }
 }

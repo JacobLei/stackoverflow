@@ -8,6 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -56,6 +57,7 @@ public class HttpUtils {
                 tag.setExcerpt(excerpt);
                 tag.setAskedToday(askedToday);
                 tag.setAskedWeek(askedWeek);
+                tag.setSpiderTime(new Date());
                 list.add(tag);
 
 //                System.out.println("==================");
