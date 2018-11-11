@@ -1,29 +1,24 @@
 package com.jacob.stackoverflow.bean;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Tag {
-    public Integer getId() {
-        return Id;
-    }
-
-    public void setId(Integer id) {
-        Id = id;
-    }
-
+public class TagVisitInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "tag_visit_id")
     private Integer Id;
-    private String questionName;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "tag_name")
+    @JsonBackReference
+    private TagInfo tagInfo;
+
     private String multiplierCounts;
-    private String excerpt;
     private String askedToday;
     private String askedWeek;
 
@@ -35,13 +30,20 @@ public class Tag {
     private Date spiderTime;    // 抓取时间
 
 
-
-    public String getQuestionName() {
-        return questionName;
+    public Integer getId() {
+        return Id;
     }
 
-    public void setQuestionName(String questionName) {
-        this.questionName = questionName;
+    public void setId(Integer id) {
+        Id = id;
+    }
+
+    public TagInfo getTagInfo() {
+        return tagInfo;
+    }
+
+    public void setTagInfo(TagInfo tagInfo) {
+        this.tagInfo = tagInfo;
     }
 
     public String getMultiplierCounts() {
@@ -50,14 +52,6 @@ public class Tag {
 
     public void setMultiplierCounts(String multiplierCounts) {
         this.multiplierCounts = multiplierCounts;
-    }
-
-    public String getExcerpt() {
-        return excerpt;
-    }
-
-    public void setExcerpt(String excerpt) {
-        this.excerpt = excerpt;
     }
 
     public String getAskedToday() {
