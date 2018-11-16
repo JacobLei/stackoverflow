@@ -1,21 +1,14 @@
-package com.jacob.stackoverflow.bean;
+package com.jacob.stackoverflow.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+
 public class TagVisitInfo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "tag_visit_id")
+
     private Integer Id;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name = "tag_name")
-    @JsonBackReference
     private TagInfo tagInfo;
 
     private String multiplierCounts;

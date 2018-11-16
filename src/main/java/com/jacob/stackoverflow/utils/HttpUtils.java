@@ -1,7 +1,7 @@
 package com.jacob.stackoverflow.utils;
 
-import com.jacob.stackoverflow.bean.TagInfo;
-import com.jacob.stackoverflow.bean.TagVisitInfo;
+import com.jacob.stackoverflow.domain.TagInfo;
+import com.jacob.stackoverflow.domain.TagVisitInfo;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -57,7 +57,7 @@ public class HttpUtils {
 
 
                 tagInfo.setTagName(tagName);
-                tagInfo.setExcerpt(excerpt);
+                tagInfo.setTagExcerpt(excerpt);
                 tagVisitInfo.setMultiplierCounts(multiplierCounts);
                 tagVisitInfo.setAskedToday(askedToday);
                 tagVisitInfo.setAskedWeek(askedWeek);
