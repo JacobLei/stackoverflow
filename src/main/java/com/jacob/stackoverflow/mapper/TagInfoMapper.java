@@ -1,9 +1,9 @@
 package com.jacob.stackoverflow.mapper;
 
-import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.*;
 import com.jacob.stackoverflow.domain.TagInfo;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * 访问tag_info表格接口
@@ -28,6 +28,13 @@ public interface TagInfoMapper {
      */
     @Select("SELECT * FROM tag_info WHERE tag_name = #{name}")
     TagInfo findByTagName(String tagName);
+
+    @Select(("SELECT * from tag_info"))
+    @Results({
+            @Result(column = "tag_name", property = "tagName"),
+            @Result(column = "tag_excerpt", property = "tagExcerpt")
+    })
+    List<TagInfo> getAll();
 
 
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据库中的数据</title>
+</head>
+<body>
+<table border="2">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Excerpt</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- 常用的迭代 th:each 用法 -->
+    <tr th:each="tagInfo : ${tagInfoList}">
+        <td th:text="${tagInfo.tagName}"></td>
+        <td th:text="${tagInfo.tagExcerpt}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

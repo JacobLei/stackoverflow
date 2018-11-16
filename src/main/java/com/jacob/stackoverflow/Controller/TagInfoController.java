@@ -1,9 +1,14 @@
 package com.jacob.stackoverflow.Controller;
 
 import com.jacob.stackoverflow.domain.TagInfo;
+import com.jacob.stackoverflow.domain.TagVisitInfo;
+import com.jacob.stackoverflow.mapper.TagInfoMapper;
 import com.jacob.stackoverflow.service.ITagService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 页面展示
@@ -18,6 +23,9 @@ public class TagInfoController {
 
     @Autowired
     private ITagService tagService;
+    private TagInfo tagInfo;
+
+
 
     /**
      * 测试存储是否成功
