@@ -45,25 +45,22 @@ public class HttpUtils {
         if(elements != null && elements.size() > 0){
             for(Element e : elements){
                 TagVisitInfo tagVisitInfo = new TagVisitInfo();
-                TagInfo tagInfo = new TagInfo();
                 String tagName = e.select("a").first().text();
                 String multiplierCounts = e.select("span[class=item-multiplier]")
                         .select("span[class=item-multiplier-count]").text();
-                String excerpt = e.select("div[class=excerpt]").text();
+                String tagExcerpt = e.select("div[class=excerpt]").text();
                 String askedToday = e.select("div[class=grid--cell stats-row]")
                         .select("a").first().text().replaceAll("[^0-9]", "");
                 String askedWeek = e.select("div[class=grid--cell stats-row]")
                         .select("a").last().text().replaceAll("[^0-9]", "");
 
 
-                tagInfo.setTagName(tagName);
-                tagInfo.setTagExcerpt(excerpt);
                 tagVisitInfo.setMultiplierCounts(multiplierCounts);
                 tagVisitInfo.setAskedToday(askedToday);
                 tagVisitInfo.setAskedWeek(askedWeek);
                 tagVisitInfo.setSpiderTime(new Date());
                 tagVisitInfo.setTagName(tagName);
-                tagVisitInfo.setTagInfo(tagInfo);
+                tagVisitInfo.setTagExcerpt(tagExcerpt);
                 list.add(tagVisitInfo);
 
 //                System.out.println("==================");

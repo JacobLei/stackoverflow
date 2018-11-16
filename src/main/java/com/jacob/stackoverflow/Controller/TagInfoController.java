@@ -1,14 +1,10 @@
 package com.jacob.stackoverflow.Controller;
 
 import com.jacob.stackoverflow.domain.TagInfo;
-import com.jacob.stackoverflow.domain.TagVisitInfo;
-import com.jacob.stackoverflow.mapper.TagInfoMapper;
 import com.jacob.stackoverflow.service.ITagService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 /**
  * 页面展示
@@ -33,7 +29,6 @@ public class TagInfoController {
      */
     @GetMapping(path="add")
     public String addTagToTagInfo() {
-
 
         tagService.insertToTagInfo();
         return "saved";
@@ -64,6 +59,5 @@ public class TagInfoController {
 
         return "found it";
     }
-
 
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据库中的数据</title>
+</head>
+<body>
+<table border="2">
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>名称</th>
+        <th>总访问次数</th>
+        <th>日访问量</th>
+        <th>周访问量</th>
+        <th>抓取时间</th>
+        <th>插入时间</th>
+        <th>更新时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- 常用的迭代 th:each 用法 -->
+    <tr th:each="tagVisitInfoList : ${tagVisitInfoList}">
+        <td th:text="${tagVisitInfoList.id}"></td>
+        <td th:text="${tagVisitInfoList.tagName}"></td>
+        <td th:text="${tagVisitInfoList.multiplierCounts}"></td>
+        <td th:text="${tagVisitInfoList.askedToday}"></td>
+        <td th:text="${tagVisitInfoList.askedWeek}"></td>
+        <td th:text="${#dates.format(tagVisitInfoList.spiderTime, 'dd-MM-yyyy HH:mm:ss')}"></td>
+        <td th:text="${#dates.format(tagVisitInfoList.inputTime, 'dd-MM-yyyy HH:mm:ss')}"></td>
+        <td th:text="${#dates.format(tagVisitInfoList.updateTime, 'dd-MM-yyyy HH:mm:ss')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

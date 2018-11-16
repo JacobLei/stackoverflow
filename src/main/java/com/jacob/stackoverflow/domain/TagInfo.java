@@ -8,6 +8,20 @@ public class TagInfo {
     private String tagName;
     private String tagExcerpt;
 
+    public TagInfo() {
+    }
+
+    public TagInfo(String tagName, String tagExcerpt) {
+        this.tagName = tagName;
+        this.tagExcerpt = tagExcerpt;
+    }
+
+    public TagInfo(int id, String tagName, String tagExcerpt) {
+        this.id = id;
+        this.tagName = tagName;
+        this.tagExcerpt = tagExcerpt;
+    }
+
     public int getId() {
         return id;
     }

@@ -8,15 +8,17 @@
 <table border="2">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Excerpt</th>
+        <th>标号</th>
+        <th>名称</th>
+        <th>摘录</th>
     </tr>
     </thead>
     <tbody>
     <!-- 常用的迭代 th:each 用法 -->
-    <tr th:each="tagInfo : ${tagInfoList}">
-        <td th:text="${tagInfo.tagName}"></td>
-        <td th:text="${tagInfo.tagExcerpt}"></td>
+    <tr th:each="tagInfoList : ${tagInfoList}">
+        <td th:text="${tagInfoList.id}"></td>
+        <td th:text="${tagInfoList.tagName}"></td>
+        <td th:text="${tagInfoList.tagExcerpt}"></td>
     </tr>
     </tbody>
 </table>

@@ -9,17 +9,18 @@ public class TagVisitInfo {
 
     private Integer id;
     private String tagName;
-    private TagInfo tagInfo;
+//    private TagInfo tagInfo;
+    private String tagExcerpt;
 
     private String multiplierCounts;
     private String askedToday;
     private String askedWeek;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date inputTime;     // 入库时间
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updateTime;    // 修改时间
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date spiderTime;    // 抓取时间
 
     public String getTagName() {
@@ -38,12 +39,12 @@ public class TagVisitInfo {
         this.id = id;
     }
 
-    public TagInfo getTagInfo() {
-        return tagInfo;
+    public String getTagExcerpt() {
+        return tagExcerpt;
     }
 
-    public void setTagInfo(TagInfo tagInfo) {
-        this.tagInfo = tagInfo;
+    public void setTagExcerpt(String tagExcerpt) {
+        this.tagExcerpt = tagExcerpt;
     }
 
     public String getMultiplierCounts() {
