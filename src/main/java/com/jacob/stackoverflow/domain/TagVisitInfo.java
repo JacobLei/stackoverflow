@@ -7,8 +7,8 @@ import java.util.Date;
 
 public class TagVisitInfo {
 
-    private Integer Id;
-
+    private Integer id;
+    private String tagName;
     private TagInfo tagInfo;
 
     private String multiplierCounts;
@@ -22,13 +22,20 @@ public class TagVisitInfo {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date spiderTime;    // 抓取时间
 
+    public String getTagName() {
+        return tagName;
+    }
+
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
+    }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public TagInfo getTagInfo() {

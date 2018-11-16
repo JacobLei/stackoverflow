@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 /**
- * 访问数据库接口
+ * 访问tag_info表格接口
  */
 public interface TagInfoMapper {
 

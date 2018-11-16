@@ -62,6 +62,7 @@ public class HttpUtils {
                 tagVisitInfo.setAskedToday(askedToday);
                 tagVisitInfo.setAskedWeek(askedWeek);
                 tagVisitInfo.setSpiderTime(new Date());
+                tagVisitInfo.setTagName(tagName);
                 tagVisitInfo.setTagInfo(tagInfo);
                 list.add(tagVisitInfo);
 

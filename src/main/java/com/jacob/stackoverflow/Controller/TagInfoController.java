@@ -41,7 +41,7 @@ public class TagInfoController {
     public String addTagToTagInfoPagN2M(@RequestParam int n, @RequestParam int m){
         int ret = tagService.insertToTagInfoFromN2M(n, m);
 
-        return ret == -1 ? "unsaved" : "saved";
+        return "saved";
     }
 
     /**
